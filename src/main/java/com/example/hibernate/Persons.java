@@ -1,5 +1,6 @@
 package com.example.hibernate;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 
@@ -7,13 +8,15 @@ import jakarta.persistence.Entity;
 public class Persons {
     @EmbeddedId
     private Contact contact;
-    private String phone_number;
-    private String city_of_living;
+    @Column(name = "phone_number")
+    private String phoneNumber;
+    @Column(name = "city_of_living")
+    private String cityOfLiving;
 
-    public Persons(Contact contact, String phone_number, String city_of_living) {
+    public Persons(Contact contact, String phoneNumber, String cityOfLiving) {
         this.contact = contact;
-        this.phone_number = phone_number;
-        this.city_of_living = city_of_living;
+        this.phoneNumber = phoneNumber;
+        this.cityOfLiving = cityOfLiving;
     }
 
     public Persons() {

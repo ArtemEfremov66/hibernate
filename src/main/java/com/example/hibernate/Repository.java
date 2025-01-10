@@ -12,7 +12,7 @@ public class Repository {
     EntityManager entityManager;
 
     public List<String> getPersonsByCity(String city) {
-        Query query = entityManager.createQuery("SELECT contact.name FROM Persons WHERE city_of_living = :city");
+        Query query = entityManager.createQuery("SELECT contact.name FROM Persons WHERE cityOfLiving = :city");
         query.setParameter("city", city);
         return (List<String>) query.getResultList();
     }
